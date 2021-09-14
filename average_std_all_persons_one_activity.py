@@ -4,6 +4,11 @@
 
 persons = [2,3,4,5,7, 8,9] # [1,2]
 
+rootdir0 = 'no_interaction'
+rootdir1 = 'open_close_fridge'
+rootdir2 = 'put_back_item'
+rootdir3 = 'screen_interaction'
+rootdir4 = 'take_out_item'
 
 x_tot= {}
 y_tot= {}
