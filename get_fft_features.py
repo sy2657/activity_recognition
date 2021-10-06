@@ -16,7 +16,7 @@ def get_fft_features(raw_data='', m=84, keypoint=7):
 	for coordinate in range(3):
 		data = raw_data[:, keypoint, coordinate]
 		data = data.reshape((-1,))
-		flg = 'wavelet' #'stats', wavelet, std
+		flg = 'stats' #'stats', wavelet, std
 		if flg == 'fft':
 			fft_features = _get_fft(data, fft_bin=m)
 			fft_features = fft_features[0:1 + int(np.ceil((m - 1) / 2))]
