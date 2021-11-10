@@ -1,4 +1,4 @@
-# get data, get data ang (angle), get data hands
+# get data, get data ang (angle), get data hands, get fft 
 
 def _get_data(root_dir='data-clean', camera_type='_1.mp4', classes=[]):
 	dataset = []
@@ -90,3 +90,12 @@ def _get_data_hands(root_dir='data-clean', camera_type='_1.mp4', classes=[]):
 		print(act, len(files))
 
 	return np.array(dataset), np.array(users), np.array(activities), raw_files
+
+def _get_fft(vs, fft_bin=None, fft_type='magnitude'):
+	out = np.fft.fft(vs, n=fft_bin)
+	if fft_type == 'phase':
+		out = np.angle(out)  # phase
+	else:
+		# fft_type =='magnitude':
+		out = np.abs(out)
+	return list(out)
