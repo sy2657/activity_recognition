@@ -128,3 +128,6 @@ def best_100_frame_seg_histogram(grey_frames, bin_orig_map):
 
       if tot_v_count > 3:
         return(frame_no)
+      
+  print("frame number returned is 0")
+  return(0) # if none found
