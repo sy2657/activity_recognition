@@ -122,5 +122,15 @@ def best_100_frame_seg(grey_frames):
         else:
           bin_histogram[orig_index]= bin_histogram[orig_index]+1
       # if the counts within bin_histogram are greater than 100
+      tot_v_count =0
+      for k in bin_histogram:
+        v = bin_histogram[k]
+        
+        if v > 100:
+          print(v)
+          tot_v_count = tot_v_count+1 
+
+      if tot_v_count > 3:
+        return(frame_no)
       
       return(frame_no, frame_coords, frame_coords_x, frame_coords_y)
