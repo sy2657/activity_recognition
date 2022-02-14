@@ -17,8 +17,10 @@ def best_100_frame_seg_histogram_combined(grey_frames):
 
   firstFrame = grey_frames[0]
 
-  for frame in grey_frames:
+  frame_no = 0 
 
+  for frame in grey_frames:
+    frame_no = frame_no + 1
     if ind==0:
       prev_frame = frame
       ind = ind+1
@@ -83,8 +85,8 @@ def best_100_frame_seg_histogram_combined(grey_frames):
           tot_v_count = tot_v_count+1 
 
       if tot_v_count > 2:
-        print("frame number returned is:", ind)
-        return(ind)
+        print("frame number returned is:", frame_no)
+        return(frame_no)
 
 
     # analyze coordinates
